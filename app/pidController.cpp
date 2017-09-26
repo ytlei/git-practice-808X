@@ -43,9 +43,9 @@ pidController::~pidController(void) {}
    @return Function is of type Void.
  */
 void pidController::setPidGain(double &p, double &i, double &d) {
-    pidController::Kp = p;
-    pidController::Ki = i;
-    pidController::Kd = d;
+    Kp = p;
+    Ki = i;
+    Kd = d;
 }
 
 /**
@@ -59,7 +59,7 @@ void pidController::setPidGain(double &p, double &i, double &d) {
  *
  *   @return none
  */
-double calResult(double &setVal,double &currentVal, double &dt){
+double pidController::calResult(double &setVal,double &currentVal, double &dt){
 	return 3.0;
 }
 
@@ -70,7 +70,7 @@ double calResult(double &setVal,double &currentVal, double &dt){
  *
  *   @return Kd
  */
-double getKd(){
+double pidController::getKd(){
 	return 0;
 }
 /**
@@ -80,7 +80,7 @@ double getKd(){
  *
  *   @return Kp
  */
-double getKp(){
+double pidController::getKp(){
 	return 0;
 }
 /**
@@ -90,7 +90,7 @@ double getKp(){
  *
  *   @return Ki
  */
-double getKi(){
+double pidController::getKi(){
 	return 0;
 }
 
