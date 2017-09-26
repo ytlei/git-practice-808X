@@ -60,7 +60,7 @@ void pidController::setPidGain(double &p, double &i, double &d) {
  *   @return none
  */
 double calResult(double &setVal,double &currentVal, double &dt){
-
+	return 3.0;
 }
 
 /**
@@ -71,7 +71,7 @@ double calResult(double &setVal,double &currentVal, double &dt){
  *   @return Kd
  */
 double getKd(){
-	return pidController::Kd;
+	return 0;
 }
 /**
  *   @brief  return Kp value
@@ -81,7 +81,7 @@ double getKd(){
  *   @return Kp
  */
 double getKp(){
-	return pidController::Kp;
+	return 0;
 }
 /**
  *   @brief  return Ki value
@@ -91,7 +91,7 @@ double getKp(){
  *   @return Ki
  */
 double getKi(){
-	return pidController::Ki;
+	return 0;
 }
 
 
