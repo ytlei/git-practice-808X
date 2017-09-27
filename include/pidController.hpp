@@ -18,7 +18,7 @@
  *
  */
 
-class pidController{
+class pidController {
 private:
 	double Kd;
 	double Ki;
@@ -27,12 +27,10 @@ public:
 	pidController();
 	~pidController();
 	void setPidGain(double &p, double &i, double &d);
-	double calResult(double &setVal,double &currentVal, double &dt);
+	double calResult(double &setVal, double &currentVal, double &dt);
 	double getKd();
 	double getKp();
 	double getKi();
 };
-
-
 
 #endif /* PIDCONTROLLER_HPP_ */

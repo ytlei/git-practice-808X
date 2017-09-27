@@ -9,7 +9,6 @@
 #include <iostream>
 #include <pidController.hpp>
 
-
 /**
 
  *   @brief  Constructor function of
@@ -18,8 +17,8 @@
  *   @param  none
  *   @return none
  */
-pidController::pidController(void) {}
-
+pidController::pidController(void) {
+}
 
 /**
 
@@ -30,22 +29,22 @@ pidController::pidController(void) {}
  *   @return none
  */
 
-pidController::~pidController(void) {}
-
+pidController::~pidController(void) {
+}
 
 /**
-   @brief 	 The function takes sets the gain values of the PID controller.
+ @brief 	 The function takes sets the gain values of the PID controller.
 
-   @param     &p Proportional gain.
-   @param     &i Integral gain.
-   @param     &d Differential gain.
+ @param     &p Proportional gain.
+ @param     &i Integral gain.
+ @param     &d Differential gain.
 
-   @return Function is of type Void.
+ @return Function is of type Void.
  */
 void pidController::setPidGain(double &p, double &i, double &d) {
-    Kp = p;
-    Ki = i;
-    Kd = d;
+	Kp = p;
+	Ki = i;
+	Kd = d;
 }
 
 /**
@@ -59,7 +58,8 @@ void pidController::setPidGain(double &p, double &i, double &d) {
  *
  *   @return none
  */
-double pidController::calResult(double &setVal,double &currentVal, double &dt){
+double pidController::calResult(double &setVal, double &currentVal,
+		double &dt) {
 	return 3.0;
 }
 
@@ -70,7 +70,7 @@ double pidController::calResult(double &setVal,double &currentVal, double &dt){
  *
  *   @return Kd
  */
-double pidController::getKd(){
+double pidController::getKd() {
 	return 0;
 }
 /**
@@ -80,7 +80,7 @@ double pidController::getKd(){
  *
  *   @return Kp
  */
-double pidController::getKp(){
+double pidController::getKp() {
 	return 0;
 }
 /**
@@ -90,8 +90,7 @@ double pidController::getKp(){
  *
  *   @return Ki
  */
-double pidController::getKi(){
+double pidController::getKi() {
 	return 0;
 }
-
 
