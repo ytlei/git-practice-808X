@@ -23,11 +23,17 @@ private:
 	double Kd;
 	double Ki;
 	double Kp;
+	double integral;
+	double pre_error;
+	double error;
+	double max;
+	double min;
+	double derivative;
 public:
 	pidController();
 	~pidController();
-	void setPidGain(double &p, double &i, double &d);
-	double calResult(double &setVal, double &currentVal, double &dt);
+	void setPidGain(double p, double i, double d);
+	double calResult(double setVal, double currentVal ,double dt);
 	double getKd();
 	double getKp();
 	double getKi();

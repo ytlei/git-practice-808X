@@ -124,3 +124,11 @@ perspetive view (or Windows->Perspective->Open Perspective->C/C++).
 - Git
 
     It is possible to manage version control through Eclipse and the git plugin, but it typically requires creating another project. If you're interested in this, try it out yourself and contact me on Canvas.
+    
+## PID
+
+I have added a new file known as pidCOntroller.hpp and pidCOntroller.cpp in the folder git-pracrtice-808X.
+These files contains the PID controller algorithm which are tested.
+I have completed the PID algorithm and tested it with the cpp-boilerplate code. 
+Corresponding changes have been made to the test.cpp and test.hpp to test the PID controller. 
+All the tests shows successful implementaton of PID.
