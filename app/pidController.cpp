@@ -70,20 +70,20 @@ double pidController::calResult(double setVal, double currentVal, double dt) {
 
 	// Calculate error
 	    double error = setVal - currentVal;
-	    std::cout<<"Error"<<error<<"\n";
+	    //std::cout<<"Error"<<error<<"\n";
 	    // Proportional term
 	    double Pout = Kp * error;
-	    std::cout<<"Pout"<<Pout<<"\n";
+	    //std::cout<<"Pout"<<Pout<<"\n";
 
 	    // Integral term
 	    integral += error * dt;
 	    double Iout = Ki * integral;
-	    std::cout<<"Iout"<<Iout<<"\n";
+	    //std::cout<<"Iout"<<Iout<<"\n";
 
 	    // Derivative term
 	    double derivative = (error - pre_error) / dt;
 	    double Dout = Kd * derivative;
-	    std::cout<<"Dout"<<Dout<<"\n";
+	    //std::cout<<"Dout"<<Dout<<"\n";
 	    // Calculate total output
 	    double output = Pout + Iout + Dout;
 
@@ -95,7 +95,7 @@ double pidController::calResult(double setVal, double currentVal, double dt) {
 
 	    // Save error to previous error
 	    pre_error = error;
-	    std::cout<<"----Output----"<<output<<"\n";
+	    //std::cout<<"----Output----"<<output<<"\n";
 
 
 	    return output;
