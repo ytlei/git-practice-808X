@@ -6,8 +6,12 @@
  * @author Yi-ting Lei
  * @Created on: Sep 26, 2017
  */
-#include <iostream>
+
+
 #include <pidController.hpp>
+#include <iostream>
+
+
 
 /**
 
@@ -41,10 +45,14 @@ pidController::~pidController(void) {
 
  @return Function is of type Void.
  */
-void pidController::setPidGain(double &p, double &i, double &d) {
+void pidController::setPidGain(double p, double i, double d) {
 	Kp = p;
 	Ki = i;
 	Kd = d;
+	pre_error = 0;
+	integral = 0;
+	max = 100;
+	min = -100;
 }
 
 /**
@@ -58,9 +66,39 @@ void pidController::setPidGain(double &p, double &i, double &d) {
  *
  *   @return none
  */
-double pidController::calResult(double &setVal, double &currentVal,
-		double &dt) {
-	return 3.0;
+double pidController::calResult(double setVal, double currentVal, double dt) {
+
+	// Calculate error
+	    double error = setVal - currentVal;
+	    std::cout<<"Error"<<error<<"\n";
+	    // Proportional term
+	    double Pout = Kp * error;
+	    std::cout<<"Pout"<<Pout<<"\n";
+
+	    // Integral term
+	    integral += error * dt;
+	    double Iout = Ki * integral;
+	    std::cout<<"Iout"<<Iout<<"\n";
+
+	    // Derivative term
+	    double derivative = (error - pre_error) / dt;
+	    double Dout = Kd * derivative;
+	    std::cout<<"Dout"<<Dout<<"\n";
+	    // Calculate total output
+	    double output = Pout + Iout + Dout;
+
+	    // Restrict to max/min
+	    if( output > max )
+	        output = max;
+	    else if( output < min )
+	        output = min;
+
+	    // Save error to previous error
+	    pre_error = error;
+	    std::cout<<"----Output----"<<output<<"\n";
+
+
+	    return output;
 }
 
 /**
@@ -71,7 +109,7 @@ double pidController::calResult(double &setVal, double &currentVal,
  *   @return Kd
  */
 double pidController::getKd() {
-	return 0;
+	return Kd;
 }
 /**
  *   @brief  return Kp value
@@ -81,7 +119,7 @@ double pidController::getKd() {
  *   @return Kp
  */
 double pidController::getKp() {
-	return 0;
+	return Kp;
 }
 /**
  *   @brief  return Ki value
@@ -91,6 +129,6 @@ double pidController::getKp() {
  *   @return Ki
  */
 double pidController::getKi() {
-	return 0;
+	return Ki;
 }
 
